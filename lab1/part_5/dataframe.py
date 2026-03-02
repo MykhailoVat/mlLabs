@@ -59,7 +59,6 @@ print(data.sort_index(axis=1), "\n")
 # Сортування за значеннями стовпців
 print("######"*20)
 print(data.sort_values(1,axis=1,ascending=False), "\n")
-print(data['Number of places(thsd)'].sort_values(inplace=True), "\n")
 
 # робота з вигаданими даними
 

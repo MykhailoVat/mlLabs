@@ -10,5 +10,5 @@ temp = nyc['Temperature'][nyc['Date'] <= 2020]
 #print(temp)
 
 sns.regplot(x=years, y=temp,ci=None,scatter = False)
-plt.savefig('./data/plots/linear_regression.png')
+plt.savefig('./data/plots/linregr_partial.png')
 plt.close()

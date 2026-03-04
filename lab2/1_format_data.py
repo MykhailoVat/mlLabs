@@ -1,18 +1,18 @@
 import pandas as pd
 
-nyc = pd.read_csv('data/data.csv')
+rnyc = pd.read_csv('data/data.csv')
 
 print(' Raw data '.center(20, '#'))
-print(nyc.head())
-print(nyc.tail())
+print(rnyc.head())
+print(rnyc.tail())
 
-nyc.columns = ['Date','Temperature','Anomaly']
+rnyc.columns = ['Date', 'Temperature', 'Anomaly']
 #print(nyc.Date.dtype)
-nyc.Date = nyc.Date.floordiv(100)
+rnyc.Date = rnyc.Date.floordiv(100)
 
 print(' Formatted data '.center(20, '#'))
-print(nyc.head())
-print(nyc.tail())
+print(rnyc.head())
+print(rnyc.tail())
 
-nyc.to_csv('data/formatted_data.csv', index=False)
+rnyc.to_csv('data/formatted_data.csv', index=False)
 

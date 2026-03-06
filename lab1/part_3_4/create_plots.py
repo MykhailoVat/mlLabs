@@ -17,6 +17,6 @@ for col,name,xlb in hists:
     plt.xlabel(xlb)
     plt.ylabel("Frequency")
     plt.savefig(f"histograms/{name}.png")
-    plt.clf()
+    plt.close()
 
 

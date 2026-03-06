@@ -1,11 +1,11 @@
 import statistics as st
 
-def analyze(dataset_name, data):
-    mean = st.mean(data)
-    median = st.median(data)
-    mode = st.multimode(data)
-    variance = st.pvariance(data)
-    std = st.pstdev(data)
+def c_describe(dataset_name, dataset):
+    mean = st.mean(dataset)
+    median = st.median(dataset)
+    mode = st.multimode(dataset)
+    variance = st.pvariance(dataset)
+    std = st.pstdev(dataset)
     print(f"{dataset_name}:")
     print(f"mean: {mean}")
     print(f"median: {median}")

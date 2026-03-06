@@ -35,8 +35,8 @@ print(data[data != 2005], "\n")
 
 # Звернення до конкретного осередку DataFrame по рядку і стовпцю
 print("######"*20)
-print(data_c1.at['row5','Year'], "\n") #= 1990
-print(data_c1.iat[2,0],"\n") #= 1990
+print(data_c1.at['row5','Year'], "\n")
+print(data_c1.iat[2,0],"\n")
 
 # Описова статистика
 print("######"*20)

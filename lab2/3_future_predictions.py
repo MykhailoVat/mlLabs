@@ -2,7 +2,6 @@ import pandas as pd
 import scipy.stats as stats
 
 nyc = pd.read_csv('./data/formatted_data.csv')
-
 linear_regression = stats.linregress(nyc['Date'], nyc['Temperature'])
 
 #print(linear_regression.slope)

@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 from lab3.plot_decision_regions import pdr
 
-#--- data
+#--- shared
 
 np.random.seed(1)
 X_xor = np.random.randn(200,2)

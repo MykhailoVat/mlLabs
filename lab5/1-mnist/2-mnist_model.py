@@ -19,6 +19,4 @@ network.compile(optimizer='rmsprop',loss = 'categorical_crossentropy',metrics=['
 
 network.fit(train_images,train_labels,epochs=5,batch_size=128)
 
-network.summary()
-
 network.save("model/mnist_model.keras")

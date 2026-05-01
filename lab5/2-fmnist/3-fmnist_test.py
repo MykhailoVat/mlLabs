@@ -13,5 +13,5 @@ fmnist_model = load_model("model/fmnist_model.keras")
 
 test_loss, test_acc = fmnist_model.evaluate(test_images, test_labels)
 
-print("Test accuracy:", test_acc)
-print("\nTest loss:", test_loss)
+print("\nTest accuracy:", test_acc)
+print("Test loss:", test_loss)

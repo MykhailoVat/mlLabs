@@ -6,14 +6,14 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-mnist_model = load_model("mnist/model/mnist_model.keras")
+mnist_model = load_model("model/mnist_model.keras")
 
 file_names = ['entry2.png', 'entry5.png', 'entry3.png', 'entry7.png']
 nums = ["2", "5", "3", "7"]
 processed = []
 
 for name in file_names:
-    full_path = os.path.join('mnist/data/handw/', name)
+    full_path = os.path.join('data/handw/', name)
 
     tst = 255 - cv2.imread(full_path, 0)
     tst = cv2.resize(tst, (28, 28))
@@ -32,7 +32,7 @@ for tst, num in zip(processed, nums):
 #check data
 plt.figure(figsize=(10, 5))
 for i in range(4):
-    plt.subplot(1, 4, i+1) # 1 рядок, 4 колонки
+    plt.subplot(1, 4, i+1)
     plt.xticks([])
     plt.yticks([])
     plt.grid(False)

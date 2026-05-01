@@ -9,7 +9,6 @@ import numpy as np
 #load data
 (train_images, train_labels), (test_images, test_labels) = cifar10.load_data()
 
-
 #check data
 plt.figure(figsize=(10,10))
 for i in range(25):

@@ -13,5 +13,5 @@ mnist_model = load_model("model/mnist_model.keras")
 
 test_loss, test_acc = mnist_model.evaluate(test_images,test_labels)
 
-print("Test accuracy:", test_acc)
-print("\nTest loss:", test_loss)
+print("\nTest accuracy:", test_acc)
+print("Test loss:", test_loss)

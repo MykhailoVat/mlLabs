@@ -1,4 +1,5 @@
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 os.environ["KERAS_BACKEND"] = "torch"
 
 import numpy as np
@@ -12,26 +13,39 @@ train_labels = data["train_labels"]
 
 network = models.Sequential()
 
-# Перший блок згорток: шукаємо прості форми
+#l1
 network.add(layers.Conv2D(32, (3, 3), activation='relu'))
+network.add(layers.BatchNormalization())
 network.add(layers.MaxPooling2D((2, 2)))
+network.add(layers.Dropout(0.3))
 
-# Другий блок: шукаємо складніші структури
+#l2
 network.add(layers.Conv2D(64, (3, 3), activation='relu'))
+network.add(layers.BatchNormalization())
+network.add(layers.MaxPooling2D((2, 2)))
+network.add(layers.Dropout(0.3))
 
-# Третій блок: глибоке вивчення ознак
+#l3
 network.add(layers.Conv2D(128, (3, 3), activation='relu'))
+network.add(layers.BatchNormalization())
+network.add(layers.MaxPooling2D((2, 2)))
+network.add(layers.Dropout(0.3))
 
-# Перетворення 2D-карт у 1D-вектор для фінальної класифікації
+#l5
+network.add(layers.Conv2D(128, (3, 3), activation='relu'))
+network.add(layers.BatchNormalization())
+network.add(layers.MaxPooling2D((2, 2)))
+network.add(layers.Dropout(0.3))
+
+#l6
 network.add(layers.Flatten())
-network.add(layers.Dense(32, activation='relu'))
-# Вихідний шар: 10 класів об'єктів
+network.add(layers.Dense(128, activation='relu'))
+network.add(layers.BatchNormalization())
+network.add(layers.Dropout(0.4))
 network.add(layers.Dense(10, activation='softmax'))
 
-network.compile(optimizer='adam',loss = 'categorical_crossentropy',metrics=['accuracy'])
+network.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
-network.fit(train_images,train_labels,epochs=10,batch_size=128)
-
-network.summary()
+network.fit(train_images, train_labels, epochs=20, batch_size=64)
 
 network.save("model/cifar_model.keras")
